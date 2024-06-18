@@ -9,7 +9,7 @@ function App() {
     <Router>
       <div>
         <Routes>
-          <Route path='/' element={<Admin_Router />} />
+          <Route path='/admin' element={<Admin_Router />} />
         </Routes>
       </div>
     </Router>
