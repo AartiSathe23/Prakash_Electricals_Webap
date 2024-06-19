@@ -10,8 +10,8 @@ function App() {
     <Router>
       <div>
         <Routes>
-          <Route path='/a' element={<Admin_Router />} />
-          <Route path='/' element={<Cust_Router />} />
+          <Route path='/' element={<Admin_Router />} />
+          <Route path='/admin' element={<Cust_Router />} />
         </Routes>
       </div>
     </Router>

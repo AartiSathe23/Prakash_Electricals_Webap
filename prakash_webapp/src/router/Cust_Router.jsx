@@ -1,12 +1,14 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Footer from '../component/customer/footer/cust_footer';
+// import Footer from '../component/customer/footer/cust_footer';
+import Header from '../component/customer/header/cust_header';
 
 const Cust_Router = () => {
   return (
     <div>
       <Routes>
-        <Route path='/' element={<Footer/>} />
+        {/* <Route path='/' element={<Footer/>} /> */}
+        <Route path='/' element={<Header/>}/>
       </Routes>
     </div>
   )
