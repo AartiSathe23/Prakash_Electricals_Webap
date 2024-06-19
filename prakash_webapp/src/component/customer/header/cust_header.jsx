@@ -1,7 +1,7 @@
 import React from 'react';
 import { Search as SearchIcon, AccountCircle as ProfileIcon, ShoppingCart as ShoppingCartIcon } from '@mui/icons-material';
 import './cust_header.css';
-import logo from '../../../assets/logo.png';
+import logo from '../../../assets/lrblogo.png';
 
 const CustHeader = () => {
   return (
