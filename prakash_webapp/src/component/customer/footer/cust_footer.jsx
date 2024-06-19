@@ -11,7 +11,7 @@ const CustFooter = () => {
           <img src={logo} alt="Logo" className="logo"/>
         </div>
         <div className="footer-section">
-          <h3>Quick Links</h3>
+          <h3>Quick Links</h3><hr />
           <ul>
             <li><a href="/home">Home</a></li>
             <li><a href="/men">Men</a></li>

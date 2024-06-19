@@ -1,7 +1,7 @@
 /* src/styles/cust_footer.css */
 .footer {
-    background-color: #e7eaf6;
-    color: #111010;
+    background-color: #0b1528;
+    color: #eaeaea;
     padding: 20px 0;
   }
   
@@ -42,7 +42,7 @@
   }
   
   .footer-section ul li a {
-    color: #111010;
+    color: #eaeaea;
     text-decoration: none;
   }
   
@@ -55,7 +55,7 @@
   }
   
   .contact-section a {
-    color: #111010;
+    color: #eaeaea;
     text-decoration: none;
   }
   
@@ -66,7 +66,7 @@
   .footer-divider {
     border: 0;
     height: 1px;
-    background:#111010;
+    background:#eaeaea;
     ;
     margin: 20px 0;
   }
