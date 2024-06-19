@@ -4,7 +4,8 @@ import ProfileIcon from '@mui/icons-material/AccountCircle';
 import SettingsIcon from '@mui/icons-material/Settings';
 import SearchIcon from '@mui/icons-material/Search';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import DashboardIcon from '@mui/icons-material/CollectionsTwoTone';
+import CollectionIcon from '@mui/icons-material/CollectionsTwoTone';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import CustomerIcon from '@mui/icons-material/GroupTwoTone';
@@ -51,9 +52,24 @@ const AdminPanel = () => {
           <img src={logo} alt="Logo" />
         </div>
         <ul className="sidebar-list">
-          <li className="sidebar-item">
+        <li className="sidebar-item">
             <div onClick={() => handleDropdownClick(0)} className="sidebar-link">
               <DashboardIcon className="sidebar-icon" />
+              Dashboard
+              {openDropdown === 0 ? <ExpandLessIcon className="dropdown-icon" /> : <ExpandMoreIcon className="dropdown-icon" />}
+            </div>
+            <Collapse in={openDropdown === 0} timeout="auto" unmountOnExit>
+              <ul className="dropdown">
+                <li className="dropdown-item">Add Collections</li>
+                <li className="dropdown-item">View Collections</li>
+                <li className="dropdown-item">Add Sub Collections</li>
+                <li className="dropdown-item">View Sub Collections</li>
+              </ul>
+            </Collapse>
+          </li>
+          <li className="sidebar-item">
+            <div onClick={() => handleDropdownClick(0)} className="sidebar-link">
+              <CollectionIcon className="sidebar-icon" />
               Collections
               {openDropdown === 0 ? <ExpandLessIcon className="dropdown-icon" /> : <ExpandMoreIcon className="dropdown-icon" />}
             </div>
