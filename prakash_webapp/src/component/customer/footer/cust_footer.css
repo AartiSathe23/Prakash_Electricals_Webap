@@ -2,7 +2,6 @@
 .footer {
     background-color: #0b1528;
     color: #eaeaea;
-    padding: 20px 0;
   }
   
   .footer-content {
@@ -17,14 +16,14 @@
   }
   
   .logo-section .logo {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
-    margin-bottom: 10px;
     cursor: default; /* This line sets the cursor to default */
   }
   
   .logo-section p {
-    font-size: 14px;
+    font-size: 15px;
+    margin-top: -26px;
   }
   
   .footer-section h3 {
@@ -62,12 +61,15 @@
   .contact-section a:hover {
     text-decoration: underline;
   }
+
+  span {
+    color: #AD6336;
+  }
   
   .footer-divider {
     border: 0;
     height: 1px;
     background:#eaeaea;
-    ;
     margin: 20px 0;
   }
   
@@ -78,5 +80,6 @@
   
   .footer-bottom p {
     margin: 0;
+    margin-bottom: 15px;
   }
   

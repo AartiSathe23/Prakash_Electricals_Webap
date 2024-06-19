@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 10px 0;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
   }
   
   .sidebar-logo img {
@@ -167,6 +167,7 @@ body {
 }
 
 
-  /* #383733
-  #eaeaea */
+  /* #0b1528
+  #eaeaea 
+  #AD6336 */
 

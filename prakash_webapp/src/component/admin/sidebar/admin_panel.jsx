@@ -11,7 +11,7 @@ import CustomerIcon from '@mui/icons-material/GroupTwoTone';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './admin_panel.css'; 
-import logo from '../../../assets/logo.png';
+import logo from '../../../assets/lrblogo.png';
 
 const AdminPanel = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
