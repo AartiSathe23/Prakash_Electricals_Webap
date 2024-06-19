@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Collapse } from '@mui/material';
 import ProfileIcon from '@mui/icons-material/AccountCircle';
 import SettingsIcon from '@mui/icons-material/Settings';
 import SearchIcon from '@mui/icons-material/Search';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import CollectionIcon from '@mui/icons-material/CollectionsTwoTone';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import AssignmentIcon from '@mui/icons-material/Assignment';
+import DashboardIcon from '@mui/icons-material/SpaceDashboardTwoTone';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCartTwoTone';
+import AssignmentIcon from '@mui/icons-material/AssignmentLateTwoTone';
 import CustomerIcon from '@mui/icons-material/GroupTwoTone';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandMoreIcon from '@mui/icons-material/KeyboardArrowRight';
 import './admin_panel.css'; 
 import logo from '../../../assets/lrblogo.png';
 
@@ -52,56 +53,59 @@ const AdminPanel = () => {
           <img src={logo} alt="Logo" />
         </div>
         <ul className="sidebar-list">
-        <li className="sidebar-item">
-            <div onClick={() => handleDropdownClick(0)} className="sidebar-link">
+          <li className="sidebar-item">
+            <Link to="/" className="sidebar-link">
               <DashboardIcon className="sidebar-icon" />
               Dashboard
-              {openDropdown === 0 ? <ExpandLessIcon className="dropdown-icon" /> : <ExpandMoreIcon className="dropdown-icon" />}
-            </div>
-            <Collapse in={openDropdown === 0} timeout="auto" unmountOnExit>
-              <ul className="dropdown">
-                <li className="dropdown-item">Add Collections</li>
-                <li className="dropdown-item">View Collections</li>
-                <li className="dropdown-item">Add Sub Collections</li>
-                <li className="dropdown-item">View Sub Collections</li>
-              </ul>
-            </Collapse>
-          </li>
-          <li className="sidebar-item">
-            <div onClick={() => handleDropdownClick(0)} className="sidebar-link">
-              <CollectionIcon className="sidebar-icon" />
-              Collections
-              {openDropdown === 0 ? <ExpandLessIcon className="dropdown-icon" /> : <ExpandMoreIcon className="dropdown-icon" />}
-            </div>
-            <Collapse in={openDropdown === 0} timeout="auto" unmountOnExit>
-              <ul className="dropdown">
-                <li className="dropdown-item">Add Collections</li>
-                <li className="dropdown-item">View Collections</li>
-                <li className="dropdown-item">Add Sub Collections</li>
-                <li className="dropdown-item">View Sub Collections</li>
-              </ul>
-            </Collapse>
+            </Link>
           </li>
           <li className="sidebar-item">
             <div onClick={() => handleDropdownClick(1)} className="sidebar-link">
-              <ShoppingCartIcon className="sidebar-icon" />
-              Manage Products
+              <CollectionIcon className="sidebar-icon" />
+              Collections
               {openDropdown === 1 ? <ExpandLessIcon className="dropdown-icon" /> : <ExpandMoreIcon className="dropdown-icon" />}
             </div>
             <Collapse in={openDropdown === 1} timeout="auto" unmountOnExit>
               <ul className="dropdown">
-                <li className="dropdown-item">Add Product</li>
-                <li className="dropdown-item">View Products</li>
+                <li className="dropdown-item">
+                  <Link to="/addcollections" className="sidebar-link">Add Collections</Link>
+                </li>
+                <li className="dropdown-item">
+                  <Link to="/viewcollections" className="sidebar-link">View Collections</Link>
+                </li>
+                <li className="dropdown-item">
+                  <Link to="/addsubcollections" className="sidebar-link">Add Sub Collections</Link>
+                </li>
+                <li className="dropdown-item">
+                  <Link to="/viewsubcollections" className="sidebar-link">View Sub Collections</Link>
+                </li>
               </ul>
             </Collapse>
           </li>
           <li className="sidebar-item">
             <div onClick={() => handleDropdownClick(2)} className="sidebar-link">
-              <AssignmentIcon className="sidebar-icon" />
-              Orders
+              <ShoppingCartIcon className="sidebar-icon" />
+              Manage Products
               {openDropdown === 2 ? <ExpandLessIcon className="dropdown-icon" /> : <ExpandMoreIcon className="dropdown-icon" />}
             </div>
             <Collapse in={openDropdown === 2} timeout="auto" unmountOnExit>
+              <ul className="dropdown">
+                <li className="dropdown-item">
+                  <Link to="/addproduct" className="sidebar-link">Add Product</Link>
+                </li>
+                <li className="dropdown-item">
+                  <Link to="/viewproducts" className="sidebar-link">View Products</Link>
+                </li>
+              </ul>
+            </Collapse>
+          </li>
+          <li className="sidebar-item">
+            <div onClick={() => handleDropdownClick(3)} className="sidebar-link">
+              <AssignmentIcon className="sidebar-icon" />
+              Orders
+              {openDropdown === 3 ? <ExpandLessIcon className="dropdown-icon" /> : <ExpandMoreIcon className="dropdown-icon" />}
+            </div>
+            <Collapse in={openDropdown === 3} timeout="auto" unmountOnExit>
               <ul className="dropdown">
                 <li className="dropdown-item">All Orders</li>
                 <li className="dropdown-item">Pending Orders</li>
@@ -110,19 +114,19 @@ const AdminPanel = () => {
             </Collapse>
           </li>
           <li className="sidebar-item">
-            <div onClick={() => handleDropdownClick(3)} className="sidebar-link">
+            <div onClick={() => handleDropdownClick(4)} className="sidebar-link">
               <CustomerIcon className="sidebar-icon" />
               Customers
-              {openDropdown === 3 ? <ExpandLessIcon className="dropdown-icon" /> : <ExpandMoreIcon className="dropdown-icon" />}
+              {openDropdown === 4 ? <ExpandLessIcon className="dropdown-icon" /> : <ExpandMoreIcon className="dropdown-icon" />}
             </div>
-            <Collapse in={openDropdown === 3} timeout="auto" unmountOnExit>
+            <Collapse in={openDropdown === 4} timeout="auto" unmountOnExit>
               <ul className="dropdown">
                 <li className="dropdown-item">View Customers</li>
               </ul>
             </Collapse>
           </li>
           <li className="sidebar-item">
-            <div onClick={() => handleDropdownClick(4)} className="sidebar-link">
+            <div onClick={() => handleDropdownClick(5)} className="sidebar-link">
               <SettingsIcon className="sidebar-icon" />
               Settings
             </div>

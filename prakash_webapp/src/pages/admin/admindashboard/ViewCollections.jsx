@@ -2,7 +2,7 @@ import React from 'react'
 
 const ViewCollections = () => {
   return (
-    <div>ViewCollections</div>
+    <div>View Collections</div>
   )
 }
 
