@@ -120,8 +120,8 @@ const Menubar = () => {
   }, []);
 
   return (
-    <div className="menubar-container">
-      <div className="menubar" ref={menuRef}>
+    <div className="menubar-container" ref={menuRef}>
+      <div className="menubar">
         {categories.map((category, index) => (
           <div
             key={index}
@@ -134,14 +134,15 @@ const Menubar = () => {
         ))}
       </div>
       {clickedCategory && expandedSubcategories.length > 0 && (
-        <div className="dropdown-menu">
-          <h2>{clickedCategory.name}</h2>
-          <div className="subcategory-list">
-            {expandedSubcategories.map((subcategory, index) => (
-              <div key={index} className="subcategory-item">
-                {subcategory}
-              </div>
-            ))}
+        <div className="dropdown-container">
+          <div className="dropdown-menu">
+            <div className="subcategory-list">
+              {expandedSubcategories.map((subcategory, subIndex) => (
+                <div key={subIndex} className="subcategory-item">
+                  {subcategory}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       )}

@@ -1,13 +1,15 @@
 .menubar-container {
-  background-color: rgba(11, 21, 40, 0.9);
+  position: relative; /* Ensure relative positioning for absolute children */
+  background-color: #0b1528;
   padding: 10px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+  scroll-behavior: smooth; /* Smooth scrolling behavior */
 }
 
 .menubar {
   display: flex;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
-  scroll-behavior: smooth; /* Smooth scrolling behavior */
+  flex-wrap: nowrap; /* Ensure no wrapping of items */
 }
 
 .menu-item {
@@ -40,16 +42,26 @@
   font-weight: 500;
 }
 
+.dropdown-container {
+  position: relative; /* Container for dropdown menu */
+}
+
 .dropdown-menu {
+  position: absolute; /* Position relative to the menubar */
+  top: 100%; /* Align below the menubar */
+  left: 0; /* Align with the left of the menubar */
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid #eaeaea;
   padding: 20px;
-  margin-top: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: #0b1528;
   text-align: center;
   transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 1; /* Ensure it's above other content */
+  width: 100%; /* Expand to full width */
+  max-height: none; /* Remove max-height */
+  overflow-y: visible; /* Remove vertical scrolling */
 }
 
 .subcategory-list {
