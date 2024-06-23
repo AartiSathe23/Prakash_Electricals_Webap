@@ -120,8 +120,8 @@ const Menubar = () => {
   }, []);
 
   return (
-    <div className="menubar-container" ref={menuRef}>
-      <div className="menubar">
+    <div className="menubar-wrapper">
+      <div className="menubar" ref={menuRef}>
         {categories.map((category, index) => (
           <div
             key={index}

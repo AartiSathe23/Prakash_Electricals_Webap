@@ -1,15 +1,15 @@
-.menubar-container {
-  position: relative; /* Ensure relative positioning for absolute children */
-  background-color: #0b1528;
-  padding: 10px;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
-  scroll-behavior: smooth; /* Smooth scrolling behavior */
+.menubar-wrapper {
+  position: relative; /* Ensure relative positioning for the wrapper */
 }
 
 .menubar {
   display: flex;
   flex-wrap: nowrap; /* Ensure no wrapping of items */
+  background-color: #0b1528;
+  padding: 10px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+  scroll-behavior: smooth; /* Smooth scrolling behavior */
 }
 
 .menu-item {
@@ -43,13 +43,14 @@
 }
 
 .dropdown-container {
-  position: relative; /* Container for dropdown menu */
+  position: absolute; /* Ensure dropdown is positioned relative to menubar-wrapper */
+  top: 100%; /* Position below menubar */
+  left: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 .dropdown-menu {
-  position: absolute; /* Position relative to the menubar */
-  top: 100%; /* Align below the menubar */
-  left: 0; /* Align with the left of the menubar */
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid #eaeaea;
   padding: 20px;
@@ -58,29 +59,25 @@
   color: #0b1528;
   text-align: center;
   transition: opacity 0.2s ease, visibility 0.2s ease;
-  z-index: 1; /* Ensure it's above other content */
-  width: 100%; /* Expand to full width */
-  max-height: none; /* Remove max-height */
-  overflow-y: visible; /* Remove vertical scrolling */
 }
 
 .subcategory-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .subcategory-item {
+  background-color: #0b1528;
+  color: #eaeaea;
   padding: 10px;
-  background-color: #f0f0f0;
   border-radius: 5px;
+  transition: transform 0.2s ease, background-color 0.3s;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: medium;
-  font-weight: bold;
 }
 
 .subcategory-item:hover {
-  background-color: #e0e0e0;
+  background-color: #1c2234;
+  transform: scale(1.05);
 }
