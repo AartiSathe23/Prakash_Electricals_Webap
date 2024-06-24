@@ -1,18 +1,26 @@
 import React, { useState } from 'react';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import '../admindashboard/styles/AddSubCollections.css';
+import { useDropzone } from 'react-dropzone';
+import '../admindashboard/styles/AddProducts.css';
 
-const AddSubCollections = () => {
+const AddProduct = () => {
   const [formData, setFormData] = useState({
-    collectionName: '',
-    subCollectionName: '',
+    productName: '',
+    brand: '',
+    collection: '',
+    subCollection: '',
+    images: [],
+    description: '',
+    sellingPrice: '',
+    mrp: '',
+    sku: '',
+    stockQuantity: '',
     metaTitle: '',
     metaDescription: '',
     metaKeywords: '',
     h1Tag: '',
     status: 'active',
-    description: '',
   });
 
   const handleChange = (e) => {
@@ -31,25 +39,58 @@ const AddSubCollections = () => {
     });
   };
 
+  const onDrop = (acceptedFiles) => {
+    setFormData({
+      ...formData,
+      images: [...formData.images, ...acceptedFiles],
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission
     console.log('Form Data:', formData);
   };
 
+  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+
   return (
     <div className="form-container">
-      <h2>Sub Collection Details</h2>
+      <h2>Product Details</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group horizontal-group">
           <div className="form-group-inner">
-            <label htmlFor="collectionName">Collection Name</label>
-            <select
-              id="collectionName"
-              name="collectionName"
-              value={formData.collectionName}
+            <label htmlFor="productName">Product Name</label>
+            <input
+              type="text"
+              id="productName"
+              name="productName"
+              value={formData.productName}
               onChange={handleChange}
-              className={formData.collectionName === "" ? "placeholder" : ""}
+              placeholder="Product Name"
+            />
+          </div>
+          <div className="form-group-inner">
+            <label htmlFor="brand">Brand</label>
+            <input
+              type="text"
+              id="brand"
+              name="brand"
+              value={formData.brand}
+              onChange={handleChange}
+              placeholder="Brand"
+            />
+          </div>
+        </div>
+        <div className="form-group horizontal-group">
+          <div className="form-group-inner">
+            <label htmlFor="collection">Collection</label>
+            <select
+              id="collection"
+              name="collection"
+              value={formData.collection}
+              onChange={handleChange}
+              className={formData.collection === "" ? "placeholder" : ""}
             >
               <option value="">--Select--</option>
               <option value="collection1">Collection 1</option>
@@ -59,13 +100,13 @@ const AddSubCollections = () => {
             </select>
           </div>
           <div className="form-group-inner">
-            <label htmlFor="subCollectionName">Sub Collection Name</label>
+            <label htmlFor="subCollection">Sub Collection</label>
             <select
-              id="subCollectionName"
-              name="subCollectionName"
-              value={formData.subCollectionName}
+              id="subCollection"
+              name="subCollection"
+              value={formData.subCollection}
               onChange={handleChange}
-              className={formData.subCollectionName === "" ? "placeholder" : ""}
+              className={formData.subCollection === "" ? "placeholder" : ""}
             >
               <option value="">--Select--</option>
               <option value="subCollection1">Sub Collection 1</option>
@@ -95,6 +136,66 @@ const AddSubCollections = () => {
               };
             }}
           />
+        </div>
+        <div className="form-group">
+          <label htmlFor="images">Images</label>
+          <div {...getRootProps({ className: 'dropzone' })}>
+            <input {...getInputProps()} />
+            <p>Drag 'n' drop some files here, or click to select files</p>
+          </div>
+          <div className="image-preview">
+            {formData.images.map((file, index) => (
+              <img key={index} src={URL.createObjectURL(file)} alt={`Preview ${index}`} />
+            ))}
+          </div>
+        </div>
+        <div className="form-group horizontal-group">
+          <div className="form-group-inner">
+            <label htmlFor="sellingPrice">Selling Price</label>
+            <input
+              type="number"
+              id="sellingPrice"
+              name="sellingPrice"
+              value={formData.sellingPrice}
+              onChange={handleChange}
+              placeholder="Selling Price"
+            />
+          </div>
+          <div className="form-group-inner">
+            <label htmlFor="mrp">MRP</label>
+            <input
+              type="number"
+              id="mrp"
+              name="mrp"
+              value={formData.mrp}
+              onChange={handleChange}
+              placeholder="MRP"
+            />
+          </div>
+        </div>
+        <div className="form-group horizontal-group">
+          <div className="form-group-inner">
+            <label htmlFor="sku">SKU</label>
+            <input
+              type="text"
+              id="sku"
+              name="sku"
+              value={formData.sku}
+              onChange={handleChange}
+              placeholder="SKU"
+            />
+          </div>
+          <div className="form-group-inner">
+            <label htmlFor="stockQuantity">Stock Quantity</label>
+            <input
+              type="number"
+              id="stockQuantity"
+              name="stockQuantity"
+              value={formData.stockQuantity}
+              onChange={handleChange}
+              placeholder="Stock Quantity"
+            />
+          </div>
         </div>
         <div className="form-group horizontal-group">
           <div className="form-group-inner">
@@ -144,7 +245,6 @@ const AddSubCollections = () => {
             />
           </div>
         </div>
-        
         <div className="form-group">
           <label>Status</label>
           <div className="radio-group">
@@ -170,10 +270,10 @@ const AddSubCollections = () => {
             </label>
           </div>
         </div>
-        <button type="submit">Add Sub Collection</button>
+        <button type="submit">Add Product</button>
       </form>
     </div>
   );
 };
 
-export default AddSubCollections;
+export default AddProduct;

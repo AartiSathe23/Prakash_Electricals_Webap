@@ -91,7 +91,7 @@ const AdminPanel = () => {
             <Collapse in={openDropdown === 2} timeout="auto" unmountOnExit>
               <ul className="dropdown">
                 <li className="dropdown-item">
-                  <Link to="/addproduct" className="sidebar-link">Add Product</Link>
+                  <Link to="/addproducts" className="sidebar-link">Add Product</Link>
                 </li>
                 <li className="dropdown-item">
                   <Link to="/viewproducts" className="sidebar-link">View Products</Link>

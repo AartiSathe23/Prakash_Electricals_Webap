@@ -6,6 +6,7 @@ import AddCollections from '../pages/admin/admindashboard/AddCollections';
 import AddSubCollections from '../pages/admin/admindashboard/AddSubcollections';
 import ViewCollections from '../pages/admin/admindashboard/ViewCollections';
 import ViewSubCollections from '../pages/admin/admindashboard/ViewSubcollections';
+import AddProducts from '../pages/admin/admindashboard/AddProducts';
 import AdminPanel from '../component/admin/sidebar/admin_panel';
 
 const Admin_Router = () => {
@@ -20,6 +21,7 @@ const Admin_Router = () => {
           <Route path="/addsubcollections" element={<AddSubCollections />} />
           <Route path="/viewcollections" element={<ViewCollections />} />
           <Route path="/viewsubcollections" element={<ViewSubCollections />} />
+          <Route path="/addproducts" element={<AddProducts />} />
         </Routes>
       </div>
     </div>

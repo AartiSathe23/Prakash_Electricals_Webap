@@ -99,22 +99,35 @@ body {
 .search-section {
   display: flex;
   align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 5px 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .search-icon {
   margin-right: 10px;
+  color: #888888;
 }
 
 .search-input {
   border: none;
   outline: none;
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 30px;
+  width: 250px;
+  transition: width 0.3s ease;
+}
+
+.search-input:focus {
+  width: 300px;
 }
 
 .icon-section {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 .profile-section {
@@ -125,31 +138,40 @@ body {
 }
 
 .header-icon {
-  margin-right: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
 }
 
 .user-name {
-  margin-right: 10px;
+  margin-left: 10px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.dropdown-icon {
+  font-size: 1.5rem;
 }
 
 .profile-menu {
   position: absolute;
-  top: 100%;
+  top: 60px;
   right: 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: rgba(0, 0, 0, 0.7); /* Transparent background */
   border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  width: 200px;
+  z-index: 1001;
+  color: #ecf0f1;
+  overflow: hidden;
 }
 
 .profile-menu-item {
-  padding: 10px;
+  padding: 10px 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .profile-menu-item:hover {
-  background-color: #f2f2f2;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .admin-main-content {
